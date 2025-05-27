@@ -5,6 +5,8 @@ import TitleCards from "../../components/TitleCards/TitleCards";
 import Footer from "../../components/Footer/Footer";
 import heroBanner from "../../assets/images/hero_banner.jpg";
 import heroTitle from "../../assets/images/hero_title.png";
+import playIcon from "../../assets/images/play_icon.png";
+import infoIcon from "../../assets/images/info_icon.png";
 
 export const Home = () => {
   return (
@@ -19,9 +21,26 @@ export const Home = () => {
             in mordern instabul embarks on a quest to save the city from an
             imortal enemy
           </p>
+
+          <div className="hero-btns">
+            <button className="btn ">
+              <img src={playIcon} alt="" />
+              Play
+            </button>
+            <button className="btn dark-btn">
+              <img src={infoIcon} alt="" />
+              More Info
+            </button>
+          </div>
+          <TitleCards />
         </div>
       </div>
-      <TitleCards />
+      <div className="more-cards">
+        <TitleCards title={"Blockbuster Movies"} />
+        <TitleCards title={"Only on Netflix"} />
+        <TitleCards title={"Upcoming"} />
+        <TitleCards title={"Top Picks For You"} />
+      </div>
       <Footer />
     </div>
   );
