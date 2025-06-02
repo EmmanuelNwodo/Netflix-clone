@@ -5,6 +5,7 @@ import SearchIcon from "../../assets/images/search-icon.png";
 import BellIcon from "../../assets/images/bell-icon.png";
 import ProfileIcon from "../../assets/images/profile-icon.png";
 import DropdownIcon from "../../assets/images/dropdown-icon.png";
+import { logout } from "../../firebase";
 
 const Navbar = () => {
   const navRef = useRef();
@@ -39,7 +40,13 @@ const Navbar = () => {
           <img src={ProfileIcon} alt="" className="profile" />
           <img src={DropdownIcon} alt="" className="dropdown-icon" />
           <div className="dropdown">
-            <p>Logout </p>
+            <p
+              onClick={() => {
+                logout();
+              }}
+            >
+              Logout{" "}
+            </p>
           </div>
         </div>
       </div>

@@ -4,36 +4,51 @@ import {
    createUserWithEmailAndPassword,
    getAuth, 
    signInWithEmailAndPassword, 
-   signOut} from "firebase/auth";
+   signOut
+  } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { toast } from "react-toastify";
+
+
+
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBJhJbVO31RNMM-lJ_uFDGRCM5JlYC7zCw",
-  authDomain: "netflix-clone-f4cf0.firebaseapp.com",
-  projectId: "netflix-clone-f4cf0",
-  storageBucket: "netflix-clone-f4cf0.firebasestorage.app",
-  messagingSenderId: "482852727505",
-  appId: "1:482852727505:web:a507b1ec2e0b2cbd1773f0"
+  apiKey: "AIzaSyAhZ1eLtqk3l28OmhDJHMPqqA5v7ANAJu4",
+  authDomain: "netflix-clone3-bd4e8.firebaseapp.com",
+  projectId: "netflix-clone3-bd4e8",
+  storageBucket: "netflix-clone3-bd4e8.firebasestorage.app",
+  messagingSenderId: "37955953868",
+  appId: "1:37955953868:web:32b17b32d0eded74af8e69"
 };
+
 
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const signup = async (name, email, password) => {
+
+
+const signup = async ( name, email, password) => {
   try {
   const res =  await createUserWithEmailAndPassword(auth, email, password);
+
   const user = res.user;
   await addDoc(collection(db, "user"), {
-      uid:user.uid,
+      uid: user.uid,
       name,
-      authProvider:"local",
+      authProvider: "local",
       email,
   })
   } catch (error) {
     console.log(error);
-    alert(error);
+    const message = error.code
+  .split('/')[1]
+  .split('-')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+    toast.error(message);
     
   }
 }
@@ -43,12 +58,17 @@ const login = async (email, password) =>{
  await signInWithEmailAndPassword(auth, email, password)
   } catch (error) {
     console.log(error);
-    alert(error);
+    const message = error.code
+  .split('/')[1]
+  .split('-')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+    toast.error(message)
   }
 }
 
-const logout = async () => {
+const logout = () => {
   signOut(auth);
 }
 
-export {auth, login, signup, logout}
+export { auth, db, login, signup, logout}
