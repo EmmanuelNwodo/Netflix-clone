@@ -9,6 +9,7 @@
 .login-logo{
   width: 150px;
   margin-left: 60px;
+
 }
 
 .login-form{
@@ -93,4 +94,36 @@
 
 .form-switch span:hover{
   text-decoration: underline;
+}
+
+.login-spinner{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.login-spinner img{
+  width: 200px;
+}
+
+
+@media (max-width:500px) {
+  .login{
+    padding: 15px 5%;
+    
+  }
+
+  .login-logo{
+    width: 70px;
+  }
+
+  .login-form{
+    padding: 20px;
+    margin-top: 30px;
+    width: 70%;
+    max-width: 300px;
+  }
 }

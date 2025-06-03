@@ -10,7 +10,7 @@
   display: flex;
   gap: 20px;
   margin: 40px 0;
- /* place-content: center;*/
+ 
 }
 
 .footer-icons img{
@@ -37,5 +37,17 @@
 .copyright-text{
   color: gray;
   font-size: 14px;
-  /*text-align: center;*/
+  
+}
+
+@media (max-width:800px) {
+  .footer-icons img{
+    width: 25px;
+  }
+
+  .footer ul{
+    grid-template-columns: auto auto;
+    gap: 10px;
+    font-size: 14px;
+  }
 }
