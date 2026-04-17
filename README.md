@@ -105,13 +105,13 @@ Use `.env.example` to show required variables.
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](assets/screenshots/home.png)
+![Home Page](src/assets/screenshots/assets/screenshots/home.png)
 
 ### Login Page
-![Login Page](assets/screenshots/login.png)
+![Login Page](src/assets/screenshots/login.png)
 
 ### Player Page
-![Player Page](assets/screenshots/player.png)
+![Player Page](src/assets/screenshots/player.png)
 
 ---
 
@@ -137,7 +137,7 @@ Use `.env.example` to show required variables.
 
 ## 🌐 Live Demo
 
-[*(Add deployed link here if you host it on Vercel/Netlify)*](https://vustra.netlify.app)
+[*(https://vustra.netlify.app)*]
 
 ---
 
