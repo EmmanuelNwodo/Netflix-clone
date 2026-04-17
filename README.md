@@ -105,7 +105,7 @@ Use `.env.example` to show required variables.
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](src/assets/screenshots/assets/screenshots/home.png)
+![Home Page](src/assets/screenshots/home.png)
 
 ### Login Page
 ![Login Page](src/assets/screenshots/login.png)
